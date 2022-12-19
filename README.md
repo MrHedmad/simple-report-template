@@ -18,3 +18,6 @@ The main text should be included in the `./document.tex`, with the `main.tex` fi
 You can write appendices in `appendices.tex`, and modify `main.tex` to include them.
 
 Edit `main.tex` just with your information and the report title, then you're free to go.
+
+## License
+With the exceptions being the fonts (which I don't own, and follow **their own licensing**), everything in this repository is in the public domain. Refer to the `LICENSE` file for more information.
