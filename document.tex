@@ -1,0 +1,43 @@
+\section{Introduction}
+
+\gls{foobar} is a strange animal. \gls{foo} is another strange animal. It is true, since Albert said it \cite{AlbertRelativity}. Is any case, the \gls{gcd} is really useful if you need to calculate the \gls{gcd} of something.
+
+\texttt{This text is monospace.} This text is boring. \textit{This text is in italics instead!}
+
+% R code block is the default
+% Override with `style=...`, like `style=PyStyle` for Python,
+% or `style=ShellStyle` for shell
+\begin{lstlisting}[caption=This is a listing]
+get_db_names <- function(db_namespace) {
+  suppressWarnings({
+    if (!require(db_namespace, character.only = TRUE)) {
+      BiocManager::install(db_namespace)
+      suppressPackageStartupMessages(library(db_namespace, character.only = TRUE))
+    }
+  })
+  possibilities <- ls(paste0("package:", db_namespace))
+  db_name = gsub("\\.db", "", db_namespace)
+  possibilities <- sapply(
+    possibilities, gsub,
+    pattern = db_name, replacement = ""
+  )
+  
+  # Clean out the things that start with _ or . as they are functions and junk
+  possibilities <- sapply(
+    possibilities, gsub,
+    pattern = "^[_\\.].*", replacement = "")
+  
+  possibilities <- possibilities[possibilities != ""]
+  names(possibilities) <- NULL
+  return(possibilities)
+}
+\end{lstlisting}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{resources/images/sylveon.jpg}
+    \caption{This is a magical pokemon, and one of my favourites!}
+    \label{fig:pokemon}
+\end{figure}
+
+Figure \ref{fig:pokemon} shows my favourite pokemon.
